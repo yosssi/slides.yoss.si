@@ -1,4 +1,6 @@
-# Slides
+# Website showing slides
+
+[Slides - Yosssi](http://slides.yoss.si/)
 
 ## Installation
 
