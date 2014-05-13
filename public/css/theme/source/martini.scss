@@ -1,0 +1,52 @@
+/**
+ * Black theme for reveal.js.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic);
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #2b3848;
+
+$mainFont: 'Roboto', sans-serif;
+$mainColor: #fff;
+$linkColor: #ea5343;
+$linkColorHover: lighten( $linkColor, 20% );
+$headingColor: #fff;
+$headingFont: 'Roboto', sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: -0.03em;
+$headingTextTransform: none;
+$selectionBackgroundColor: #ea5343;
+$mainFontSize: 30px;
+$headingLetterSpacing: 0;
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+.reveal {
+  letter-spacing: 0;
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+  }
+  h1 span {
+    color: #ea5343;
+  }
+  .subtitle {
+    font-size: 1.4em;
+  }
+}
+
+

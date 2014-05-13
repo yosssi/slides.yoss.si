@@ -1,0 +1,52 @@
+{
+  "init_tasks": [
+    {
+      "command": "make bin"
+    },
+    {
+      "command": "make stop"
+    },
+    {
+      "command": "make run",
+      "nowait": true
+    }
+  ],
+  "watchers": [
+    {
+      "extension": "html",
+      "tasks": [
+        {
+          "command": "make bin"
+        },
+        {
+          "command": "make rerun",
+          "nowait": true
+        }
+      ]
+    },
+    {
+      "extension": "css",
+      "tasks": [
+        {
+          "command": "make bin"
+        },
+        {
+          "command": "make rerun",
+          "nowait": true
+        }
+      ]
+    },
+    {
+      "extension": "js",
+      "tasks": [
+        {
+          "command": "make bin"
+        },
+        {
+          "command": "make rerun",
+          "nowait": true
+        }
+      ]
+    }
+  ]
+}

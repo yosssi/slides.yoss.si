@@ -23,3 +23,7 @@ _testmain.go
 *.test
 
 slides.yoss.si
+
+node_modules
+
+.sass-cache
