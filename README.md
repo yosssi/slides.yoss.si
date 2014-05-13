@@ -1,4 +1,13 @@
-slides.yoss.si
-==============
+# Slides
 
-slides.yoss.si
+## Installation
+
+```sh
+$ go get github.com/yosssi/slides.yoss.si
+```
+
+## Execution
+
+```sh
+$ MARTINI_ENV=production slides.yoss.si
+```
