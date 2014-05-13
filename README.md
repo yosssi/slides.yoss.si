@@ -3,7 +3,7 @@
 ## Installation
 
 ```sh
-$ go get github.com/yosssi/slides.yoss.si
+$ go get -u github.com/yosssi/slides.yoss.si
 ```
 
 ## Execution
