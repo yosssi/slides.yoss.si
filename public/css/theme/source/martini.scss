@@ -47,6 +47,13 @@ $headingLetterSpacing: 0;
   .subtitle {
     font-size: 1.4em;
   }
+  small {
+    font-size: .7em;
+  }
+  p, li {
+    font-size: 1.1em;
+  }
+  li {
+    line-height: 150%;
+  }
 }
-
-

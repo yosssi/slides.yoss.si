@@ -143,3 +143,9 @@ body {
     color: #ea5343; }
   .reveal .subtitle {
     font-size: 1.4em; }
+  .reveal small {
+    font-size: .7em; }
+  .reveal p, .reveal li {
+    font-size: 1.1em; }
+  .reveal li {
+    line-height: 150%; }
