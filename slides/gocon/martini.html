@@ -7,7 +7,7 @@
     <title>Martini - Web framework for Go</title>
 
     <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-    <meta name="author" content="Hakim El Hattab">
+    <meta name="author" content="Keiji Yoshida">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -58,8 +58,56 @@
             <li>Web developer</li>
             <li>Started using Go half a year ago</li>
             <li>Joined <a href="https://github.com/martini-contrib">Martini Contrib</a> this month
-              <img src="https://s3-ap-northeast-1.amazonaws.com/yosssi/slides/gocon/martini/martini-contrib.jpg" alt="martini-contrib.">
+              <a href="https://github.com/martini-contrib"><img src="https://s3-ap-northeast-1.amazonaws.com/yosssi/slides/gocon/martini/martini-contrib.jpg" alt="martini-contrib."></a>
             </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Abstract</h2>
+          <ul>
+            <li><a href="http://martini.codegangsta.io/">Martini</a> - Web framework for Go</li>
+            <li>Released in November 2013</li>
+            <li>Developed by Jeremy Saenz (<a href="https://twitter.com/codegangsta">@codegangsta</a>)</li>
+            <li>Inspired by <a href="http://expressjs.com/">Express</a> and <a href="http://www.sinatrarb.com/">Sinatra</a>
+              <a href="http://martini.codegangsta.io/"><img src="https://s3-ap-northeast-1.amazonaws.com/yosssi/slides/gocon/martini/martini-top.jpg" alt="martini-contrib."></a>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Hello world!</h2>
+          <pre><code class="hljs go">
+package main
+
+import "github.com/go-martini/martini"
+
+func main() {
+  m := martini.Classic()
+  m.Get("/", func() string {
+    return "Hello world!"
+  })
+  m.Run()
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Features</h2>
+          <ul>
+            <li>Modular design</li>
+            <li>Service injection</li>
+            <li>Compatible with <a href="http://golang.org/src/pkg/net/http/">http</a> package built in Go</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Thank you</h2>
+          <ul class="list-style-none">
+            <li>Keiji Yoshida</li>
+            <li><a href="http://yoss.si">http://yoss.si</a></li>
+            <li><a href="https://twitter.com/_yosssi">@_yosssi</a></li>
+            <li><a href="mailto:yoshida.keiji.84@gmail.com">yoshida.keiji.84@gmail.com</a></li>
           </ul>
         </section>
       </div>

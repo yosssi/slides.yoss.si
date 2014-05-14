@@ -9,5 +9,5 @@ stop:
 rerun:
 	make stop
 	make run
-sass:
+themes:
 	grunt themes

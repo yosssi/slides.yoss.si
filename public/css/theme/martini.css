@@ -145,7 +145,13 @@ body {
     font-size: 1.4em; }
   .reveal small {
     font-size: .7em; }
+  .reveal ul.list-style-none {
+    list-style-type: none;
+    margin: 0; }
   .reveal p, .reveal li {
     font-size: 1.1em; }
   .reveal li {
     line-height: 150%; }
+  .reveal code {
+    font-size: 1.5em;
+    line-height: 100%; }
