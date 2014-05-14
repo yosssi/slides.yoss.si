@@ -152,6 +152,9 @@ body {
     font-size: 1.1em; }
   .reveal li {
     line-height: 150%; }
-  .reveal code {
-    font-size: 1.5em;
-    line-height: 100%; }
+  .reveal pre {
+    width: 100%;
+    margin: 15px 0; }
+    .reveal pre code {
+      font-size: 1.5em;
+      line-height: 100%; }

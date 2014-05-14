@@ -77,8 +77,7 @@
 
         <section>
           <h2>Hello world!</h2>
-          <pre><code class="hljs go">
-package main
+          <pre><code class="hljs go">package main
 
 import "github.com/go-martini/martini"
 
@@ -88,8 +87,50 @@ func main() {
     return "Hello world!"
   })
   m.Run()
-}
-          </code></pre>
+}</code></pre>
+        </section>
+
+        <section>
+          <h2>Basics</h2>
+          <ul>
+            <li>Routes</li>
+            <li>Handlers</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Routes</h2>
+          <ul>
+            <li>An HTTP method paired with a URL-matching pattern
+            <pre><code class="hljs go">m.Get("/foo", func() {
+  // show something
+})
+
+m.Post("/bar", func() {
+  // create something
+})</code></pre>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Handlers</h2>
+          <ul>
+            <li>Any kind of callable functions
+            <pre><code class="hljs go">m.Get("/foo", func() {
+  // show something
+})</code></pre>
+            </li>
+            <li>a handler which is invoked before the routing is called "middleware handler"
+            <pre><code class="hljs go">m.Use(func() {
+  // do some middleware stuff
+})
+
+m.Get("/foo", func() {
+  // show something
+})</code></pre>
+            </li>
+          </ul>
         </section>
 
         <section>
@@ -97,7 +138,7 @@ func main() {
           <ul>
             <li>Modular design</li>
             <li>Service injection</li>
-            <li>Compatible with <a href="http://golang.org/src/pkg/net/http/">http</a> package built in Go</li>
+            <li>Compatible with <a href="http://golang.org/pkg/net/http/">http</a> package built in Go</li>
           </ul>
         </section>
 
