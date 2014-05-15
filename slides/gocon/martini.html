@@ -121,7 +121,7 @@ m.Post("/bar", func() {
   // show something
 })</code></pre>
             </li>
-            <li>a handler which is invoked before the routing is called "middleware handler"
+            <li>a handler invoked before routing is called "middleware handler"
             <pre><code class="hljs go">m.Use(func() {
   // do some middleware stuff
 })
@@ -139,6 +139,38 @@ m.Get("/foo", func() {
             <li>Modular design</li>
             <li>Service injection</li>
             <li>Compatible with <a href="http://golang.org/pkg/net/http/">http</a> package built in Go</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Modular design</h2>
+          <ul>
+            <li>Small core, bunch of <a href="https://github.com/martini-contrib">martini-contrib</a> packages</li>
+            <li>Easy to add functionality, easy to rip stuff out</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Core</h2>
+          <ul>
+            <li>Logger</li>
+            <li>Recovery</li>
+            <li>Router</li>
+            <li>Static</li>
+            <li><a href="https://github.com/codegangsta/inject">Injecter</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>martini-contrib packages</h2>
+          <ul>
+            <li><a href="https://github.com/martini-contrib/render">render</a></li>
+            <li><a href="https://github.com/martini-contrib/sessions">sessions</a></li>
+            <li><a href="https://github.com/martini-contrib/gzip">gzip</a></li>
+            <li><a href="https://github.com/martini-contrib/csrf">csrf</a></li>
+            <li><a href="https://github.com/martini-contrib/auth">auth</a></li>
+            <li><a href="https://github.com/martini-contrib/oauth2">oauth2</a></li>
+            <li><a href="https://github.com/martini-contrib">See all...</a></li>
           </ul>
         </section>
 
