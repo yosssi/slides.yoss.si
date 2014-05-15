@@ -121,7 +121,7 @@ m.Post("/bar", func() {
   // show something
 })</code></pre>
             </li>
-            <li>a handler invoked before routing is called "middleware handler"
+            <li>"middleware handler" is a handler invoked before routing
             <pre><code class="hljs go">m.Use(func() {
   // do some middleware stuff
 })
@@ -171,6 +171,43 @@ m.Get("/foo", func() {
             <li><a href="https://github.com/martini-contrib/auth">auth</a></li>
             <li><a href="https://github.com/martini-contrib/oauth2">oauth2</a></li>
             <li><a href="https://github.com/martini-contrib">See all...</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Service injection</h2>
+          <ul>
+            <li>Martini injects structs into arguments of handlers via <a href="http://golang.org/pkg/reflect/">reflection</a><pre><code class="hljs go">m.Get("/hello/:name", func(params martini.Params) string {
+  // params is injected by Martini
+  return "Hello " + params["name"]
+})</code></pre><pre style="margin-top: 30px;"><code class="hljs go">func SetupDB() *sql.DB {
+  db, _ := sql.Open("postgres", "dbname=sample")
+  return db
+}
+
+// DB handle will be availabe to
+// all handlers as *sql.DB
+m.Map(SetupDB())
+
+m.Get("/users", func(db *sql.DB) string {
+  // db is injected by Martini
+  rows, err := db.Query("SELECT id FROM users")
+})</code></pre>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Compatible with <a href="http://golang.org/pkg/net/http/">http</a> package</h2>
+          <ul>
+            <li>We can handle <a href="http://godoc.org/net/http#ResponseWriter">http.ResponseWriter</a> and <a href="http://godoc.org/net/http#Request">http.Request</a> in handlers via Martini's service injection<pre><code class="hljs go">m.Get("/", func(res http.ResponseWriter, req *http.Request) {
+  // res and req are injected by Martini
+  if req.Header.Get("X-API-KEY") != "secret123" {
+    res.WriteHeader(http.StatusUnauthorized)
+  }
+  // ...
+})</code></pre>
+            </li>
           </ul>
         </section>
 
