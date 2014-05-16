@@ -145,7 +145,7 @@ m.Get("/foo", func() {
           <h2>Features</h2>
           <ul>
             <li>Modular design</li>
-            <li>Service injection</li>
+            <li>Utilizing dependency injection</li>
             <li>Compatible with <a href="http://golang.org/pkg/net/http/">http</a> package built in Go</li>
           </ul>
         </section>
@@ -184,7 +184,7 @@ m.Get("/foo", func() {
         </section>
 
         <section>
-          <h2>Service injection</h2>
+          <h2>Utilizing dependency injection</h2>
           <ul>
             <li>Martini injects structs into arguments of handlers via <a href="http://golang.org/pkg/reflect/">reflection</a><pre><code class="hljs go">m.Get("/hello/:name", func(params martini.Params) string {
   // params is injected by Martini
@@ -209,7 +209,7 @@ m.Get("/users", func(db *sql.DB) string {
         <section>
           <h2>Compatible with <a href="http://golang.org/pkg/net/http/">http</a> package</h2>
           <ul>
-            <li>We can use <a href="http://godoc.org/net/http#ResponseWriter">http.ResponseWriter</a> and <a href="http://godoc.org/net/http#Request">http.Request</a> in handlers via Martini's service injection<pre><code class="hljs go">m.Get("/", func(res http.ResponseWriter, req *http.Request) {
+            <li>We can use <a href="http://godoc.org/net/http#ResponseWriter">http.ResponseWriter</a> and <a href="http://godoc.org/net/http#Request">http.Request</a> in handlers<pre><code class="hljs go">m.Get("/", func(res http.ResponseWriter, req *http.Request) {
   // res and req are injected by Martini
   if req.Header.Get("X-API-KEY") != "secret123" {
     res.WriteHeader(http.StatusUnauthorized)
