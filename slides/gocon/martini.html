@@ -219,6 +219,23 @@ m.Get("/users", func(db *sql.DB) string {
             </li>
           </ul>
         </section>
+        <section>
+          <h2>Compatible with <a href="http://golang.org/pkg/net/http/">http</a> package</h2>
+          <ul>
+            <li>A Martini struct implements <a href="http://golang.org/pkg/net/http/#Handler">http.Handler</a> and can be linked up to other servers
+              <pre><code class="hljs go">type Handler interface {
+  ServeHTTP(ResponseWriter, *Request)
+}</code></pre><pre style="margin-top: 30px;"><code class="hljs go">func (m *Martini) ServeHTTP(
+  res http.ResponseWriter,
+  req *http.Request,
+) {
+  m.createContext(res, req).run()
+}</code></pre><pre style="margin-top: 30px;"><code class="hljs go">m := martini.Classic()
+http.Handle("/", m) // Register the Martini struct as a handler
+// ...
+http.ListenAndServe(":8080", nil)</code></pre></li>
+          </ul>
+        </section>
 
         <section>
           <h2>Examples</h2>
