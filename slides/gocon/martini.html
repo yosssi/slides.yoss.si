@@ -64,15 +64,11 @@
         </section>
 
         <section>
-          <h2>Conclusion</h2>
-          <ul>
-            <li>foo</li>
-            <li>bar</li>
-          </ul>
+          <h2>Abstract</h2>
         </section>
 
         <section>
-          <h2>Abstract</h2>
+          <h2>About</h2>
           <ul>
             <li><a href="http://martini.codegangsta.io/">Martini</a> - Web framework for Go</li>
             <li>Released in November 2013</li>
@@ -100,23 +96,25 @@ func main() {
 
         <section>
           <h2>Basics</h2>
-          <ul>
-            <li>Routes</li>
-            <li>Handlers</li>
-          </ul>
         </section>
 
         <section>
           <h2>Routes</h2>
           <ul>
             <li>An HTTP method paired with a URL-matching pattern
-            <pre><code class="hljs go">m.Get("/foo", func() {
-  // show something
-})
+            <pre><code class="hljs go">m.Get("/", func() {})
 
-m.Post("/bar", func() {
-  // create something
-})</code></pre>
+m.Patch("/", func() {})
+
+m.Post("/", func() {})
+
+m.Put("/", func() {})
+
+m.Delete("/", func() {})
+
+m.Options("/", func() {})
+
+m.Head("/", func() {})</code></pre>
             </li>
           </ul>
         </section>
@@ -125,16 +123,20 @@ m.Post("/bar", func() {
           <h2>Handlers</h2>
           <ul>
             <li>Any kind of callable functions
-            <pre><code class="hljs go">m.Get("/foo", func() {
+            <pre><code class="hljs go">m.Get("/", func() {
   // show something
 })</code></pre>
             </li>
-            <li>"middleware handler" is a handler invoked before routing
+            <li>A middleware is a handler invoked before routing
             <pre><code class="hljs go">m.Use(func() {
   // do some middleware stuff
 })
 
-m.Get("/foo", func() {
+m.Use(func() {
+  // do another middleware stuff
+})
+
+m.Get("/", func() {
   // show something
 })</code></pre>
             </li>
@@ -143,11 +145,6 @@ m.Get("/foo", func() {
 
         <section>
           <h2>Features</h2>
-          <ul>
-            <li>Modular design</li>
-            <li>Utilizing dependency injection</li>
-            <li>Compatible with <a href="http://golang.org/pkg/net/http/">http</a> package built in Go</li>
-          </ul>
         </section>
 
         <section>
@@ -184,7 +181,7 @@ m.Get("/foo", func() {
         </section>
 
         <section>
-          <h2>Utilizing dependency injection</h2>
+          <h2>Dependency injection</h2>
           <ul>
             <li>Martini injects structs into arguments of handlers via <a href="http://golang.org/pkg/reflect/">reflection</a><pre><code class="hljs go">m.Get("/hello/:name", func(params martini.Params) string {
   // params is injected by Martini
@@ -239,17 +236,10 @@ http.ListenAndServe(":8080", nil)</code></pre></li>
 
         <section>
           <h2>Examples</h2>
-          <ul>
-            <li>foo</li>
-            <li>bar</li>
-          </ul>
         </section>
 
         <section>
           <h2>Tips</h2>
-          <ul>
-            <li>build a single binary file</li>
-          </ul>
          </section>
 
         <section>
@@ -276,9 +266,10 @@ m.Use(render.Renderer(render.Options{
 
         <section>
           <h2>Projects using Martini</h2>
-          <ul>
-            <li>aaa</li>
-          </ul>
+        </section>
+
+        <section>
+          <h2><a href="http://syncthing.net/">Syncthing</a></h2>
         </section>
 
         <section>
@@ -299,6 +290,7 @@ m.Use(render.Renderer(render.Options{
           <ul>
             <li><a href="http://0value.com/build-a-restful-API-with-Martini">Build a RESTful API with Martini</a></li>
             <li><a href="http://rebuild.fm/42/">Rebuild: 42: When in Golang, Do as the Gophers Do (lestrrat)</a></li>
+            <li><a href="https://twitter.com/codegangsta">Jeremy Saenz (codegangsta) on Twitter</a></li>
           </ul>
         </section>
 
