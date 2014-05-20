@@ -282,7 +282,7 @@ m.Use(render.Renderer(render.Options{
           <h2><a href="http://syncthing.net/">Syncthing</a></h2>
           <ul>
             <li>File synchronization software like <a href="https://www.dropbox.com/">Dropbox</a></li>
-            <li>Martini is used in the Web GUI for configuring and monitoring Syncthing
+            <li>Martini is used in the Web GUI for configuring and monitoring
             <a href="http://syncthing.net/"><img src="https://s3-ap-northeast-1.amazonaws.com/yosssi/slides/gocon/martini/syncthing.jpg" alt="syncthing"></a></li>
           </ul>
         </section>
@@ -301,11 +301,21 @@ m.Use(render.Renderer(render.Options{
         </section>
 
         <section>
-          <h2>"Three reasons you should not use Martini"</h2>
+          <h2><a href="https://stephensearles.com/?p=254">"Three reasons you should not use Martini"</a></h2>
           <ul>
-            <li><a href="https://stephensearles.com/?p=254">An article which criticizes Martini</a> was posted</li>
+            <li>Martini's abuse of reflection defeats the Go's type system (though the type system is a huge reason for choosing Go)</li>
+            <li>Created the <a href="https://github.com/stephens2424/muxchain">muxchain</a> package similar to Martini without reflection<a href="https://stephensearles.com/?p=254"><img src="https://s3-ap-northeast-1.amazonaws.com/yosssi/slides/gocon/martini/three-reasons.jpg" alt="three-reasons"></a></li>
           </ul>
         </section>
+
+        <section>
+          <h2><a href="http://codegangsta.io/blog/2014/05/19/my-thoughts-on-martini/">"My Thoughts on Martini"</a></h2>
+          <ul>
+            <li>Martini's abuse of reflection defeats the Go's type system (though the type system is a huge reason for choosing Go)</li>
+            <li>Created the <a href="https://github.com/stephens2424/muxchain">muxchain</a> package similar to Martini without reflection<a href="https://stephensearles.com/?p=254"><img src="https://s3-ap-northeast-1.amazonaws.com/yosssi/slides/gocon/martini/three-reasons.jpg" alt="three-reasons"></a></li>
+          </ul>
+        </section>
+
 
         <section>
           <h2>Reference (1/2)</h2>
