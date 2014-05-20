@@ -311,11 +311,44 @@ m.Use(render.Renderer(render.Options{
         <section>
           <h2><a href="http://codegangsta.io/blog/2014/05/19/my-thoughts-on-martini/">"My Thoughts on Martini"</a></h2>
           <ul>
-            <li>Martini's abuse of reflection defeats the Go's type system (though the type system is a huge reason for choosing Go)</li>
-            <li>Created the <a href="https://github.com/stephens2424/muxchain">muxchain</a> package similar to Martini without reflection<a href="https://stephensearles.com/?p=254"><img src="https://s3-ap-northeast-1.amazonaws.com/yosssi/slides/gocon/martini/three-reasons.jpg" alt="three-reasons"></a></li>
+            <li>Martini is not Idiomatic - the mantras surrounding to Go community are simplicity, familiarity with the stdlib, and explicit interactions with the type system</li>
+            <li>Still want to accomplish the goal: <strong>promote the creation of awesome reusable web components for Go</strong><a href="https://stephensearles.com/?p=254"><img src="https://s3-ap-northeast-1.amazonaws.com/yosssi/slides/gocon/martini/my-thoughts.jpg" alt="three-reasons"></a></li>
           </ul>
         </section>
 
+        <section>
+          <h2><a href="http://negroni.codegangsta.io/">Negroni</a></h2>
+        </section>
+
+        <section>
+          <h2>About</h2>
+          <ul>
+            <li><a href="http://negroni.codegangsta.io/">Negroni</a> - Library designed to work directly with <a href="http://golang.org/pkg/net/http/">net/http</a></li>
+            <li>Has logging, panic recovery, static file serving middlewares</li>
+            <li>Does not have a router middleware</li>
+          </ul>
+          </section>
+
+        <section>
+          <h2>Hello world!</h2>
+          <pre><code class="hljs go">package main
+
+import (
+  "github.com/codegangsta/negroni"
+  "net/http"
+  "fmt"
+)
+
+func main() {
+  mux := http.NewServeMux()
+  mux.HandleFunc("/", func(w http.ResponseWriter, req *http.Request) {
+    fmt.Fprintf(w, "Hello world!")
+  })
+  n := negroni.Classic()
+  n.UseHandler(mux)
+  n.Run(":3000")
+}</code></pre>
+        </section>
 
         <section>
           <h2>Reference (1/2)</h2>
@@ -338,6 +371,8 @@ m.Use(render.Renderer(render.Options{
             <li><a href="https://twitter.com/codegangsta">Jeremy Saenz (codegangsta) on Twitter</a></li>
             <li><a href="https://stephensearles.com/?p=254">Three reasons you should not use Martini | Stephen Searles</a></li>
             <li><a href="http://codegangsta.io/blog/2014/05/19/my-thoughts-on-martini/">My Thoughts on Martini - Code Gangsta</a></li>
+            <li><a href="http://negroni.codegangsta.io/">Negroni</a></li>
+            <li><a href="https://github.com/codegangsta/negroni">codegangsta/negroni</a></li>
           </ul>
         </section>
 
