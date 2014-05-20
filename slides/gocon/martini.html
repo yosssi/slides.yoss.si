@@ -230,20 +230,29 @@ m.Get("/users", func(db *sql.DB) string {
 }</code></pre><pre style="margin-top: 30px;"><code class="hljs go">m := martini.Classic()
 http.Handle("/", m) // Register the Martini struct as a handler
 // ...
-http.ListenAndServe(":8080", nil)</code></pre></li>
+http.ListenAndServe(":8080", nil) // Martini will handle requests</code></pre></li>
+          </ul>
+        </section>
+
+        <!--
+        <section>
+          <h2>Tips</h2>
+        </section>
+
+        <section>
+          <h2>Live reload by using <a href="https://github.com/codegangsta/gin">Gin</a></h2>
+          <ul>
+            <li><a href="https://github.com/codegangsta/gin">Gin</a> - Command line tool for live-reloading Go web apps</li>
+            <li>Compiles Go source codes into a binary file automatically when it detects a file change</li>
+            <li>And reloads the binary file when it receives the next HTTP request<pre><code class="hljs bash">$ cd /path/to/app
+$ gin
+[gin] listening on port 3000
+[martini] listening on :3001 (development)</code></pre></li>
           </ul>
         </section>
 
         <section>
-          <h2>Examples</h2>
-        </section>
-
-        <section>
-          <h2>Tips</h2>
-         </section>
-
-        <section>
-          <h2>build a single binary file</h2>
+          <h2>Build a single binary file</h2>
           <ol>
             <li>Convert static files into Go source code via <a href="https://github.com/jteeuwen/go-bindata">go-bindata</a>
             <pre><code class="hljs go">func public_css_all_min_css() ([]byte, error) {
@@ -263,6 +272,7 @@ m.Use(render.Renderer(render.Options{
 }))</code></pre></li>
           </ol>
         </section>
+        -->
 
         <section>
           <h2>Projects using Martini</h2>
@@ -271,9 +281,18 @@ m.Use(render.Renderer(render.Options{
         <section>
           <h2><a href="http://syncthing.net/">Syncthing</a></h2>
           <ul>
-            <li>File synchronization software like <a href="https://www.dropbox.com/">Dropbox</a> and <a href="http://www.bittorrent.com/sync">BitTorrent Sync</a></li>
+            <li>File synchronization software like <a href="https://www.dropbox.com/">Dropbox</a></li>
             <li>Martini is used in the Web GUI for configuring and monitoring Syncthing
             <a href="http://syncthing.net/"><img src="https://s3-ap-northeast-1.amazonaws.com/yosssi/slides/gocon/martini/syncthing.jpg" alt="syncthing"></a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2><a href="http://gogs.io/">Gogs</a></h2>
+          <ul>
+            <li>Self hosted Git service</li>
+            <li>Martini is used in the Web application
+            <a href="http://gogs.io/"><img src="https://s3-ap-northeast-1.amazonaws.com/yosssi/slides/gocon/martini/gogs.jpg" alt="gogs"></a></li>
           </ul>
         </section>
 
@@ -282,7 +301,10 @@ m.Use(render.Renderer(render.Options{
         </section>
 
         <section>
-          <h2><a href="https://stephensearles.com/?p=254">Three reasons you should not use Martini</a></h2>
+          <h2>"Three reasons you should not use Martini"</h2>
+          <ul>
+            <li><a href="https://stephensearles.com/?p=254">An article which criticizes Martini</a> was posted</li>
+          </ul>
         </section>
 
         <section>
@@ -305,6 +327,7 @@ m.Use(render.Renderer(render.Options{
             <li><a href="http://rebuild.fm/42/">Rebuild: 42: When in Golang, Do as the Gophers Do (lestrrat)</a></li>
             <li><a href="https://twitter.com/codegangsta">Jeremy Saenz (codegangsta) on Twitter</a></li>
             <li><a href="https://stephensearles.com/?p=254">Three reasons you should not use Martini | Stephen Searles</a></li>
+            <li><a href="http://codegangsta.io/blog/2014/05/19/my-thoughts-on-martini/">My Thoughts on Martini - Code Gangsta</a></li>
           </ul>
         </section>
 
