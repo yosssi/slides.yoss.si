@@ -326,9 +326,8 @@ m.Use(render.Renderer(render.Options{
         <section>
           <h2>About</h2>
           <ul>
-            <li><a href="http://negroni.codegangsta.io/">Negroni</a> - Library designed to work directly with <a href="http://golang.org/pkg/net/http/">net/http</a></li>
-            <li>DOES NOT have a router and handler</li>
-            <li>Has logging, panic recovery, static file serving middlewares</li>
+            <li>DOES NOT have a router and handlers</li>
+            <li>Has logger, recovery, static file serving functions<a href="http://negroni.codegangsta.io/"><img src="https://s3-ap-northeast-1.amazonaws.com/yosssi/slides/gocon/martini/negroni.jpg" alt="three-reasons"></a></li>
           </ul>
           </section>
 
@@ -354,6 +353,27 @@ func main() {
         </section>
 
         <section>
+          <h2>My thoughts</h2>
+          <ul>
+            <li>
+              Need to investigate other frameworks for Go
+              <ul>
+                <li><a href="http://corner.squareup.com/2014/05/evaluating-go-frameworks.html">"A Comparison of Go Web Frameworks"</a></li>
+              </ul>
+            </li>
+            <li>
+              What is the best way to provide a request context to handlers?
+              <ul>
+                <li>Dependency Injection, like <a href="http://martini.codegangsta.io/">Martini</a></li>
+                <li>Passing a context and using type assertion, like <a href="http://www.gorillatoolkit.org/pkg/context">gorilla/context</a></li>
+                <li>Using a user-specified context, like <a href="https://github.com/gocraft/web">gocraft/web</a>
+              </ul>
+            </li>
+            <li>Need to study Go fundamentals</li>
+          </ul>
+        </section>
+
+        <section>
           <h2>Reference (1/2)</h2>
           <ul>
             <li><a href="http://martini.codegangsta.io/">Martini - Classy web development in Go.</a></li>
@@ -376,9 +396,11 @@ func main() {
             <li><a href="http://codegangsta.io/blog/2014/05/19/my-thoughts-on-martini/">My Thoughts on Martini - Code Gangsta</a></li>
             <li><a href="http://negroni.codegangsta.io/">Negroni</a></li>
             <li><a href="https://github.com/codegangsta/negroni">codegangsta/negroni</a></li>
+            <li><a href="http://corner.squareup.com/2014/05/evaluating-go-frameworks.html">A Comparison of Go Web Frameworks</a></li>
+            <li><a href="http://www.gorillatoolkit.org/pkg/context">gorilla/context</a></li>
+            <li><a href="https://github.com/gocraft/web">gocraft/web</a></li>
           </ul>
         </section>
-
 
         <section>
           <h2>Thank you</h2>
