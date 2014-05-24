@@ -216,6 +216,8 @@ m.Get("/users", func(db *sql.DB) string {
             </li>
           </ul>
         </section>
+
+        <!--
         <section>
           <h2>Compatible with <a href="http://golang.org/pkg/net/http/">http</a> package</h2>
           <ul>
@@ -233,6 +235,7 @@ http.Handle("/", m) // Register the Martini struct as a handler
 http.ListenAndServe(":8080", nil) // Martini will handle requests</code></pre></li>
           </ul>
         </section>
+        -->
 
         <!--
         <section>
@@ -324,8 +327,8 @@ m.Use(render.Renderer(render.Options{
           <h2>About</h2>
           <ul>
             <li><a href="http://negroni.codegangsta.io/">Negroni</a> - Library designed to work directly with <a href="http://golang.org/pkg/net/http/">net/http</a></li>
+            <li>DOES NOT have a router and handler</li>
             <li>Has logging, panic recovery, static file serving middlewares</li>
-            <li>Does not have a router middleware</li>
           </ul>
           </section>
 
