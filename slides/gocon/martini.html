@@ -191,8 +191,7 @@ m.Get("/", func() {
   return db
 }
 
-// DB handle will be availabe to
-// all handlers as *sql.DB
+// DB handle will be available to all handlers
 m.Map(SetupDB())
 
 m.Get("/users", func(db *sql.DB) string {
@@ -361,11 +360,11 @@ func main() {
               </ul>
             </li>
             <li>
-              What is the best way to provide a request context to handlers?
+              Need to think which the best way is to provide a request context to handlers
               <ul>
-                <li>Dependency Injection, like <a href="http://martini.codegangsta.io/">Martini</a></li>
-                <li>Passing a context and using type assertion, like <a href="http://www.gorillatoolkit.org/pkg/context">gorilla/context</a> and <a href="http://goji.io/">Goji</a></li>
-                <li>Using a user-specified context, like <a href="https://github.com/gocraft/web">gocraft/web</a>
+                <li>Using Dependency Injection, such <a href="http://martini.codegangsta.io/">Martini</a> adopts</li>
+                <li>Passing a context containing a map and using type assertion, such <a href="http://www.gorillatoolkit.org/pkg/context">gorilla/context</a> and <a href="http://goji.io/">Goji</a> adopt</li>
+                <li>Passing a user-specified context, such <a href="https://github.com/gocraft/web">gocraft/web</a> adopts
               </ul>
             </li>
             <li>Need to study Go fundamentals</li>
