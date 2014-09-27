@@ -8,6 +8,7 @@ stop:
 	ps aux | grep slides-yoss-si | grep exe/main | grep -v grep | awk '{print $$2}' | xargs kill -9
 rerun:
 	make stop
+	make bin
 	make run
 themes:
 	grunt themes
