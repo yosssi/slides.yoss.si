@@ -4594,9 +4594,9 @@ func public_index_html() ([]byte, error) {
 		0x40, 0xfa, 0x47, 0xe9, 0x6d, 0x0f, 0xd4, 0x9a, 0x77, 0x86, 0x4e, 0x1f,
 		0x51, 0xfd, 0xf4, 0x47, 0xd9, 0xfa, 0x03, 0x2a, 0x61, 0xea, 0x7d, 0xfa,
 		0x23, 0x17, 0x3e, 0xf4, 0x92, 0x55, 0x76, 0x2f, 0x0f, 0x6e, 0x8b, 0xc7,
-		0xe2, 0x61, 0x8d, 0xe1, 0xc6, 0x98, 0xab, 0x15, 0xa5, 0xce, 0xaf, 0x5a,
-		0xc2, 0x95, 0x94, 0xea, 0xbb, 0xff, 0x01, 0x00, 0x00, 0xff, 0xff, 0xc9,
-		0x07, 0x23, 0xc6, 0x26, 0x04, 0x00, 0x00,
+		0xe2, 0x71, 0x8d, 0xe1, 0xc6, 0x98, 0xab, 0x15, 0xa5, 0xce, 0xaf, 0x5a,
+		0xc2, 0x95, 0x94, 0xea, 0xbb, 0xff, 0x01, 0x00, 0x00, 0xff, 0xff, 0x46,
+		0x89, 0xf0, 0x0c, 0x26, 0x04, 0x00, 0x00,
 	},
 		"public/index.html",
 	)
@@ -26097,18 +26097,142 @@ type _bintree_t struct {
 	Children map[string]*_bintree_t
 }
 var _bintree = &_bintree_t{nil, map[string]*_bintree_t{
-	"slides": &_bintree_t{nil, map[string]*_bintree_t{
-		"2014": &_bintree_t{nil, map[string]*_bintree_t{
-			"introduction-to-go-rco.html": &_bintree_t{slides_2014_introduction_to_go_rco_html, map[string]*_bintree_t{
-			}},
-		}},
-		"gocon": &_bintree_t{nil, map[string]*_bintree_t{
-			"martini.html": &_bintree_t{slides_gocon_martini_html, map[string]*_bintree_t{
-			}},
-		}},
-	}},
 	"public": &_bintree_t{nil, map[string]*_bintree_t{
+		"css": &_bintree_t{nil, map[string]*_bintree_t{
+			"print": &_bintree_t{nil, map[string]*_bintree_t{
+				"paper.css": &_bintree_t{public_css_print_paper_css, map[string]*_bintree_t{
+				}},
+				"pdf.css": &_bintree_t{public_css_print_pdf_css, map[string]*_bintree_t{
+				}},
+			}},
+			"remark.css": &_bintree_t{public_css_remark_css, map[string]*_bintree_t{
+			}},
+			"reveal.css": &_bintree_t{public_css_reveal_css, map[string]*_bintree_t{
+			}},
+			"reveal.min.css": &_bintree_t{public_css_reveal_min_css, map[string]*_bintree_t{
+			}},
+			"style.css": &_bintree_t{public_css_style_css, map[string]*_bintree_t{
+			}},
+			"theme": &_bintree_t{nil, map[string]*_bintree_t{
+				"default.css": &_bintree_t{public_css_theme_default_css, map[string]*_bintree_t{
+				}},
+				"serif.css": &_bintree_t{public_css_theme_serif_css, map[string]*_bintree_t{
+				}},
+				"simple.css": &_bintree_t{public_css_theme_simple_css, map[string]*_bintree_t{
+				}},
+				"blood.css": &_bintree_t{public_css_theme_blood_css, map[string]*_bintree_t{
+				}},
+				"martini.css": &_bintree_t{public_css_theme_martini_css, map[string]*_bintree_t{
+				}},
+				"moon.css": &_bintree_t{public_css_theme_moon_css, map[string]*_bintree_t{
+				}},
+				"night.css": &_bintree_t{public_css_theme_night_css, map[string]*_bintree_t{
+				}},
+				"README.md": &_bintree_t{public_css_theme_readme_md, map[string]*_bintree_t{
+				}},
+				"sky.css": &_bintree_t{public_css_theme_sky_css, map[string]*_bintree_t{
+				}},
+				"solarized.css": &_bintree_t{public_css_theme_solarized_css, map[string]*_bintree_t{
+				}},
+				"source": &_bintree_t{nil, map[string]*_bintree_t{
+					"serif.scss": &_bintree_t{public_css_theme_source_serif_scss, map[string]*_bintree_t{
+					}},
+					"simple.scss": &_bintree_t{public_css_theme_source_simple_scss, map[string]*_bintree_t{
+					}},
+					"night.scss": &_bintree_t{public_css_theme_source_night_scss, map[string]*_bintree_t{
+					}},
+					"sky.scss": &_bintree_t{public_css_theme_source_sky_scss, map[string]*_bintree_t{
+					}},
+					"solarized.scss": &_bintree_t{public_css_theme_source_solarized_scss, map[string]*_bintree_t{
+					}},
+					"beige.scss": &_bintree_t{public_css_theme_source_beige_scss, map[string]*_bintree_t{
+					}},
+					"blood.scss": &_bintree_t{public_css_theme_source_blood_scss, map[string]*_bintree_t{
+					}},
+					"default.scss": &_bintree_t{public_css_theme_source_default_scss, map[string]*_bintree_t{
+					}},
+					"martini.scss": &_bintree_t{public_css_theme_source_martini_scss, map[string]*_bintree_t{
+					}},
+					"moon.scss": &_bintree_t{public_css_theme_source_moon_scss, map[string]*_bintree_t{
+					}},
+				}},
+				"beige.css": &_bintree_t{public_css_theme_beige_css, map[string]*_bintree_t{
+				}},
+				"template": &_bintree_t{nil, map[string]*_bintree_t{
+					"theme.scss": &_bintree_t{public_css_theme_template_theme_scss, map[string]*_bintree_t{
+					}},
+					"mixins.scss": &_bintree_t{public_css_theme_template_mixins_scss, map[string]*_bintree_t{
+					}},
+					"settings.scss": &_bintree_t{public_css_theme_template_settings_scss, map[string]*_bintree_t{
+					}},
+				}},
+			}},
+		}},
+		"img": &_bintree_t{nil, map[string]*_bintree_t{
+			"favicon-gocon-martini.ico": &_bintree_t{public_img_favicon_gocon_martini_ico, map[string]*_bintree_t{
+			}},
+			"favicon.ico": &_bintree_t{public_img_favicon_ico, map[string]*_bintree_t{
+			}},
+		}},
+		"index.html": &_bintree_t{public_index_html, map[string]*_bintree_t{
+		}},
+		"js": &_bintree_t{nil, map[string]*_bintree_t{
+			"remark-latest.min.js": &_bintree_t{public_js_remark_latest_min_js, map[string]*_bintree_t{
+			}},
+			"reveal.js": &_bintree_t{public_js_reveal_js, map[string]*_bintree_t{
+			}},
+			"reveal.min.js": &_bintree_t{public_js_reveal_min_js, map[string]*_bintree_t{
+			}},
+		}},
+		"lib": &_bintree_t{nil, map[string]*_bintree_t{
+			"css": &_bintree_t{nil, map[string]*_bintree_t{
+				"zenburn.css": &_bintree_t{public_lib_css_zenburn_css, map[string]*_bintree_t{
+				}},
+			}},
+			"font": &_bintree_t{nil, map[string]*_bintree_t{
+				"league_gothic-webfont.ttf": &_bintree_t{public_lib_font_league_gothic_webfont_ttf, map[string]*_bintree_t{
+				}},
+				"league_gothic-webfont.woff": &_bintree_t{public_lib_font_league_gothic_webfont_woff, map[string]*_bintree_t{
+				}},
+				"league_gothic_license": &_bintree_t{public_lib_font_league_gothic_license, map[string]*_bintree_t{
+				}},
+				"league_gothic-webfont.eot": &_bintree_t{public_lib_font_league_gothic_webfont_eot, map[string]*_bintree_t{
+				}},
+				"league_gothic-webfont.svg": &_bintree_t{public_lib_font_league_gothic_webfont_svg, map[string]*_bintree_t{
+				}},
+			}},
+			"js": &_bintree_t{nil, map[string]*_bintree_t{
+				"classList.js": &_bintree_t{public_lib_js_classlist_js, map[string]*_bintree_t{
+				}},
+				"head.min.js": &_bintree_t{public_lib_js_head_min_js, map[string]*_bintree_t{
+				}},
+				"html5shiv.js": &_bintree_t{public_lib_js_html5shiv_js, map[string]*_bintree_t{
+				}},
+			}},
+		}},
 		"plugin": &_bintree_t{nil, map[string]*_bintree_t{
+			"markdown": &_bintree_t{nil, map[string]*_bintree_t{
+				"example.md": &_bintree_t{public_plugin_markdown_example_md, map[string]*_bintree_t{
+				}},
+				"markdown.js": &_bintree_t{public_plugin_markdown_markdown_js, map[string]*_bintree_t{
+				}},
+				"marked.js": &_bintree_t{public_plugin_markdown_marked_js, map[string]*_bintree_t{
+				}},
+				"example.html": &_bintree_t{public_plugin_markdown_example_html, map[string]*_bintree_t{
+				}},
+			}},
+			"math": &_bintree_t{nil, map[string]*_bintree_t{
+				"math.js": &_bintree_t{public_plugin_math_math_js, map[string]*_bintree_t{
+				}},
+			}},
+			"remotes": &_bintree_t{nil, map[string]*_bintree_t{
+				"remotes.js": &_bintree_t{public_plugin_remotes_remotes_js, map[string]*_bintree_t{
+				}},
+			}},
+			"search": &_bintree_t{nil, map[string]*_bintree_t{
+				"search.js": &_bintree_t{public_plugin_search_search_js, map[string]*_bintree_t{
+				}},
+			}},
 			"zoom-js": &_bintree_t{nil, map[string]*_bintree_t{
 				"zoom.js": &_bintree_t{public_plugin_zoom_js_zoom_js, map[string]*_bintree_t{
 				}},
@@ -26117,14 +26241,16 @@ var _bintree = &_bintree_t{nil, map[string]*_bintree_t{
 				"highlight.js": &_bintree_t{public_plugin_highlight_highlight_js, map[string]*_bintree_t{
 				}},
 			}},
-			"markdown": &_bintree_t{nil, map[string]*_bintree_t{
-				"example.html": &_bintree_t{public_plugin_markdown_example_html, map[string]*_bintree_t{
+			"leap": &_bintree_t{nil, map[string]*_bintree_t{
+				"leap.js": &_bintree_t{public_plugin_leap_leap_js, map[string]*_bintree_t{
 				}},
-				"example.md": &_bintree_t{public_plugin_markdown_example_md, map[string]*_bintree_t{
+			}},
+			"multiplex": &_bintree_t{nil, map[string]*_bintree_t{
+				"client.js": &_bintree_t{public_plugin_multiplex_client_js, map[string]*_bintree_t{
 				}},
-				"markdown.js": &_bintree_t{public_plugin_markdown_markdown_js, map[string]*_bintree_t{
+				"index.js": &_bintree_t{public_plugin_multiplex_index_js, map[string]*_bintree_t{
 				}},
-				"marked.js": &_bintree_t{public_plugin_markdown_marked_js, map[string]*_bintree_t{
+				"master.js": &_bintree_t{public_plugin_multiplex_master_js, map[string]*_bintree_t{
 				}},
 			}},
 			"notes": &_bintree_t{nil, map[string]*_bintree_t{
@@ -26147,145 +26273,19 @@ var _bintree = &_bintree_t{nil, map[string]*_bintree_t{
 				"postmessage.js": &_bintree_t{public_plugin_postmessage_postmessage_js, map[string]*_bintree_t{
 				}},
 			}},
-			"search": &_bintree_t{nil, map[string]*_bintree_t{
-				"search.js": &_bintree_t{public_plugin_search_search_js, map[string]*_bintree_t{
-				}},
-			}},
-			"leap": &_bintree_t{nil, map[string]*_bintree_t{
-				"leap.js": &_bintree_t{public_plugin_leap_leap_js, map[string]*_bintree_t{
-				}},
-			}},
-			"math": &_bintree_t{nil, map[string]*_bintree_t{
-				"math.js": &_bintree_t{public_plugin_math_math_js, map[string]*_bintree_t{
-				}},
-			}},
-			"multiplex": &_bintree_t{nil, map[string]*_bintree_t{
-				"client.js": &_bintree_t{public_plugin_multiplex_client_js, map[string]*_bintree_t{
-				}},
-				"index.js": &_bintree_t{public_plugin_multiplex_index_js, map[string]*_bintree_t{
-				}},
-				"master.js": &_bintree_t{public_plugin_multiplex_master_js, map[string]*_bintree_t{
-				}},
-			}},
 			"print-pdf": &_bintree_t{nil, map[string]*_bintree_t{
 				"print-pdf.js": &_bintree_t{public_plugin_print_pdf_print_pdf_js, map[string]*_bintree_t{
 				}},
 			}},
-			"remotes": &_bintree_t{nil, map[string]*_bintree_t{
-				"remotes.js": &_bintree_t{public_plugin_remotes_remotes_js, map[string]*_bintree_t{
-				}},
+		}},
+	}},
+	"slides": &_bintree_t{nil, map[string]*_bintree_t{
+		"2014": &_bintree_t{nil, map[string]*_bintree_t{
+			"introduction-to-go-rco.html": &_bintree_t{slides_2014_introduction_to_go_rco_html, map[string]*_bintree_t{
 			}},
 		}},
-		"css": &_bintree_t{nil, map[string]*_bintree_t{
-			"remark.css": &_bintree_t{public_css_remark_css, map[string]*_bintree_t{
-			}},
-			"reveal.css": &_bintree_t{public_css_reveal_css, map[string]*_bintree_t{
-			}},
-			"reveal.min.css": &_bintree_t{public_css_reveal_min_css, map[string]*_bintree_t{
-			}},
-			"style.css": &_bintree_t{public_css_style_css, map[string]*_bintree_t{
-			}},
-			"theme": &_bintree_t{nil, map[string]*_bintree_t{
-				"simple.css": &_bintree_t{public_css_theme_simple_css, map[string]*_bintree_t{
-				}},
-				"sky.css": &_bintree_t{public_css_theme_sky_css, map[string]*_bintree_t{
-				}},
-				"template": &_bintree_t{nil, map[string]*_bintree_t{
-					"theme.scss": &_bintree_t{public_css_theme_template_theme_scss, map[string]*_bintree_t{
-					}},
-					"mixins.scss": &_bintree_t{public_css_theme_template_mixins_scss, map[string]*_bintree_t{
-					}},
-					"settings.scss": &_bintree_t{public_css_theme_template_settings_scss, map[string]*_bintree_t{
-					}},
-				}},
-				"beige.css": &_bintree_t{public_css_theme_beige_css, map[string]*_bintree_t{
-				}},
-				"default.css": &_bintree_t{public_css_theme_default_css, map[string]*_bintree_t{
-				}},
-				"moon.css": &_bintree_t{public_css_theme_moon_css, map[string]*_bintree_t{
-				}},
-				"README.md": &_bintree_t{public_css_theme_readme_md, map[string]*_bintree_t{
-				}},
-				"serif.css": &_bintree_t{public_css_theme_serif_css, map[string]*_bintree_t{
-				}},
-				"blood.css": &_bintree_t{public_css_theme_blood_css, map[string]*_bintree_t{
-				}},
-				"martini.css": &_bintree_t{public_css_theme_martini_css, map[string]*_bintree_t{
-				}},
-				"night.css": &_bintree_t{public_css_theme_night_css, map[string]*_bintree_t{
-				}},
-				"solarized.css": &_bintree_t{public_css_theme_solarized_css, map[string]*_bintree_t{
-				}},
-				"source": &_bintree_t{nil, map[string]*_bintree_t{
-					"martini.scss": &_bintree_t{public_css_theme_source_martini_scss, map[string]*_bintree_t{
-					}},
-					"night.scss": &_bintree_t{public_css_theme_source_night_scss, map[string]*_bintree_t{
-					}},
-					"serif.scss": &_bintree_t{public_css_theme_source_serif_scss, map[string]*_bintree_t{
-					}},
-					"simple.scss": &_bintree_t{public_css_theme_source_simple_scss, map[string]*_bintree_t{
-					}},
-					"sky.scss": &_bintree_t{public_css_theme_source_sky_scss, map[string]*_bintree_t{
-					}},
-					"beige.scss": &_bintree_t{public_css_theme_source_beige_scss, map[string]*_bintree_t{
-					}},
-					"blood.scss": &_bintree_t{public_css_theme_source_blood_scss, map[string]*_bintree_t{
-					}},
-					"default.scss": &_bintree_t{public_css_theme_source_default_scss, map[string]*_bintree_t{
-					}},
-					"solarized.scss": &_bintree_t{public_css_theme_source_solarized_scss, map[string]*_bintree_t{
-					}},
-					"moon.scss": &_bintree_t{public_css_theme_source_moon_scss, map[string]*_bintree_t{
-					}},
-				}},
-			}},
-			"print": &_bintree_t{nil, map[string]*_bintree_t{
-				"paper.css": &_bintree_t{public_css_print_paper_css, map[string]*_bintree_t{
-				}},
-				"pdf.css": &_bintree_t{public_css_print_pdf_css, map[string]*_bintree_t{
-				}},
-			}},
-		}},
-		"img": &_bintree_t{nil, map[string]*_bintree_t{
-			"favicon-gocon-martini.ico": &_bintree_t{public_img_favicon_gocon_martini_ico, map[string]*_bintree_t{
-			}},
-			"favicon.ico": &_bintree_t{public_img_favicon_ico, map[string]*_bintree_t{
-			}},
-		}},
-		"index.html": &_bintree_t{public_index_html, map[string]*_bintree_t{
-		}},
-		"js": &_bintree_t{nil, map[string]*_bintree_t{
-			"remark-latest.min.js": &_bintree_t{public_js_remark_latest_min_js, map[string]*_bintree_t{
-			}},
-			"reveal.js": &_bintree_t{public_js_reveal_js, map[string]*_bintree_t{
-			}},
-			"reveal.min.js": &_bintree_t{public_js_reveal_min_js, map[string]*_bintree_t{
-			}},
-		}},
-		"lib": &_bintree_t{nil, map[string]*_bintree_t{
-			"font": &_bintree_t{nil, map[string]*_bintree_t{
-				"league_gothic-webfont.eot": &_bintree_t{public_lib_font_league_gothic_webfont_eot, map[string]*_bintree_t{
-				}},
-				"league_gothic-webfont.svg": &_bintree_t{public_lib_font_league_gothic_webfont_svg, map[string]*_bintree_t{
-				}},
-				"league_gothic-webfont.ttf": &_bintree_t{public_lib_font_league_gothic_webfont_ttf, map[string]*_bintree_t{
-				}},
-				"league_gothic-webfont.woff": &_bintree_t{public_lib_font_league_gothic_webfont_woff, map[string]*_bintree_t{
-				}},
-				"league_gothic_license": &_bintree_t{public_lib_font_league_gothic_license, map[string]*_bintree_t{
-				}},
-			}},
-			"js": &_bintree_t{nil, map[string]*_bintree_t{
-				"classList.js": &_bintree_t{public_lib_js_classlist_js, map[string]*_bintree_t{
-				}},
-				"head.min.js": &_bintree_t{public_lib_js_head_min_js, map[string]*_bintree_t{
-				}},
-				"html5shiv.js": &_bintree_t{public_lib_js_html5shiv_js, map[string]*_bintree_t{
-				}},
-			}},
-			"css": &_bintree_t{nil, map[string]*_bintree_t{
-				"zenburn.css": &_bintree_t{public_lib_css_zenburn_css, map[string]*_bintree_t{
-				}},
+		"gocon": &_bintree_t{nil, map[string]*_bintree_t{
+			"martini.html": &_bintree_t{slides_gocon_martini_html, map[string]*_bintree_t{
 			}},
 		}},
 	}},
