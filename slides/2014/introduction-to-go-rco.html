@@ -15,7 +15,7 @@ class: center, middle, inverse
 [吉田 啓二](http://yoss.si)
 ---
 .left-column[
-# 自己紹介
+## 自己紹介
 ]
 
 .right-column[
@@ -24,16 +24,96 @@ class: center, middle, inverse
 - 趣味でGo言語製のライブラリ(OSS)を開発
 
   - [Ace](https://github.com/yosssi/ace) - HTMLテンプレートエンジン
+
   - [GCSS](https://github.com/yosssi/gcss) - CSSプリプロセッサ
 
 - [Go Conference 2014 spring](http://connpass.com/event/6370/)にて、Go言語製Webアプリケーションフレームワーク[Martini](http://martini.codegangsta.io/)について発表（[資料](http://slides.yoss.si/gocon/martini.html)）
 ]
 ---
-# Agenda
+.left-column[
+## 概要
+]
+.right-column[
+- オープンソースのプログラミング言語
 
-1. Introduction
-2. Deep-dive
-3. ...
+- Google社が管理
+
+- 2007年後半に下記の3名がプロジェクトを開始
+
+  - Robert Griesemer（V8やHotSpotの開発者）
+
+  - Ken Thompson（C言語の開発者）
+
+  - Rob Pike（Plan 9やUTF-8の開発者）
+
+- 2009年11月に初版がリリース
+
+- 2014年10月にバージョン1.3.3がリリース
+]
+---
+class: center, middle, inverse
+## Go fast!
+
+## Make programming fun again!
+---
+.left-column[
+## 問題意識
+#### 環境の変化
+]
+.right-column[
+- ここ数年、システム開発に大きく影響を与えるようなプログラミング言語が生まれていない
+
+- 一方で、システム開発の環境は変わってきている
+  - 肥大化していくライブラリ
+
+  - 複雑化していく依存関係
+
+  - 処理の大半を占めるネットワーク通信
+
+  - 大規模化していくクラスタ
+
+  - マルチコアCPUの普及
+
+- 主要なプログラミング言語は、上記を前提として設計されているわけではない
+]
+---
+.left-column[
+## 問題意識
+#### 開発速度
+]
+.right-column[
+- ビルドを行うのに非常に時間がかかる
+
+- ツールの処理が徐々に遅くなってきている
+
+- 依存関係が制御できなくなってきている
+
+- マシンの処理速度が頭打ちになってきた
+
+- 一方で、ソフトウェアは増々肥大化していく
+
+- このような状況で何も手を打たなければ、長期間のソフトウェア開発の速度は耐えられないほど遅くなる
+]
+---
+.left-column[
+## 問題意識
+#### 型システム
+]
+.right-column[
+- 粗雑な型システム
+
+  - プログラミングを困難にする
+
+  - 人々を動的型付け言語へ向かわせる
+
+- 厳格な階層
+
+  - 巨大なプログラムの型は、容易に階層化できない
+
+  - 階層構造の決定と継承の再配置に時間がかかり過ぎる
+
+- 生産性と安全性のどちらかを得ることはできるが、両方を得ることはできない
+]
     </textarea>
     <script src="/js/remark-latest.min.js" type="text/javascript">
     </script>
