@@ -91,11 +91,6 @@ class: center, middle, inverse
 
 #### 出典：Rob Pike (2009) [The Go Programming Language](http://talks.golang.org/2009/go_talk-20091030.pdf) （[動画](https://www.youtube.com/watch?v=rKnDgT73v8s)）
 ---
-class: center, middle, inverse
-## Go fast!
-
-## Make programming fun again!
----
 .left-column[
 ## 問題意識
 #### 環境の変化
@@ -156,7 +151,9 @@ class: center, middle, inverse
 ]
 ---
 class: center, middle, inverse
-## Go言語の誕生
+## Go fast!
+
+## Make programming fun again!
 ---
 .left-column[
 ## 目的
@@ -176,7 +173,7 @@ class: center, middle, inverse
 ]
 ---
 class: center, middle, inverse
-## Go言語の構文（一部）
+## Go言語の構文
 
 #### 参考：[A Tour of Go](http://tour.golang.org/)
 ---
@@ -199,7 +196,7 @@ func main() {
 ]
 ---
 .left-column[
-## 関数
+## Functions
 ]
 .right-column[
 ```go
@@ -219,7 +216,7 @@ func main() {
 ]
 ---
 .left-column[
-## 変数
+## Variables
 ]
 .right-column[
 ```go
@@ -263,6 +260,188 @@ func main() {
   }
 
   fmt.Println(sum)
+}
+```
+]
+---
+.left-column[
+## If
+]
+.right-column[
+```go
+package main
+
+import "fmt"
+
+func main() {
+  i := 1
+
+  // 括弧は不要。波括弧は必須。
+  if i == 1 {
+    fmt.Println("i == 1")
+  } else {
+    fmt.Println("i != 1")
+  }
+
+  // 条件判定の前に命令文を定義可能。
+  if j := 1; j == 1 {
+    fmt.Println("j == 1")
+  }
+}
+```
+]
+---
+.left-column[
+## Struct
+]
+.right-column[
+```go
+package main
+
+import "fmt"
+
+// Go言語にクラスはない。
+// かわりに、フィールドの集まりを表す
+// Struct（構造体）を使用する。
+type Dog struct {
+  Name string
+  Age  int
+}
+
+// 頭文字が大文字の変数・関数・型などは
+// 外部のパッケージから参照できる。
+
+// 自分で定義した型にメソッドを定義できる。
+func (d Dog) Bark() {
+  fmt.Println(d.Name + ": Bow-wow!")
+}
+
+func main() {
+  d := Dog{Name: "Happy", Age: 8}
+  d.Bark()
+}
+```
+]
+---
+.left-column[
+## Interface
+]
+.right-column[
+```go
+package main
+
+import "fmt"
+
+// インターフェースは暗黙的に実装される。
+// Barkメソッドを持つ型は全てBarkerインターフェース
+// を実装していることになる。
+type Barker interface {
+  Bark()
+}
+
+type Dog struct {
+  Name string
+  Age  int
+}
+
+func (d Dog) Bark() {
+  fmt.Println(d.Name + ": Bow-wow!")
+}
+
+func main() {
+  var b Barker = Dog{Name: "Happy", Age: 8}
+  b.Bark()
+}
+```
+]
+---
+.left-column[
+## Errors
+]
+.right-column[
+```go
+package main
+
+import (
+  "errors"
+  "fmt"
+)
+
+// errorインターフェースのデータを返却することで、
+// エラーが発生したことを呼び出し元へ知らせる。
+func run() (int, error) {
+  return 0, errors.New("error occurred")
+}
+
+func main() {
+  i, err := run()
+
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+
+  fmt.Println(i)
+}
+```
+]
+---
+.left-column[
+## Goroutines
+]
+.right-column[
+```go
+package main
+
+import (
+  "fmt"
+  "time"
+)
+
+func say(s string) {
+  for i := 0; i < 5; i++ {
+    time.Sleep(100 * time.Millisecond)
+    fmt.Println(s)
+  }
+}
+
+func main() {
+  // 新規にGoroutineを起動する。
+  go say("world")
+  say("hello")
+}
+```
+]
+---
+.left-column[
+## Channels
+]
+.right-column[
+```go
+package main
+
+import "fmt"
+
+func say(c <-chan string, done chan<- struct{}) {
+  for s := range c {
+    fmt.Println(s)
+  }
+  done <- struct{}{} // メインのgoroutineへデータを送信
+}
+
+func main() {
+  c := make(chan string) // データ送信用channel
+  done := make(chan struct{}) // データ受信用channel
+
+  go say(c, done) // 別のgoroutineを起動
+
+  for i := 0; i < 5; i++ {
+    c <- "Hello" // channel経由でデータを送信
+  }
+
+  close(c) // 送信用channelをクローズ
+
+  <-done // 別のgoroutineからのデータを受信するまで待機
 }
 ```
 ]
