@@ -19,19 +19,54 @@ class: center, middle, inverse
 ]
 
 .right-column[
-- 2014年1月からGo言語の学習を開始
+- 2014年1月より趣味でGo言語の使用を開始
 
-- 趣味でGo言語製のライブラリ(OSS)を開発
+- 2014年4月にGo言語のWebアプリケーションフレームワーク[Martini](http://martini.codegangsta.io/)の[コミッタとなる](https://github.com/martini-contrib)
 
-  - [Ace](https://github.com/yosssi/ace) - HTMLテンプレートエンジン
+- 2014年5月に[Go Conference 2014 spring](http://connpass.com/event/6370/)にて、Martiniについて発表（[資料](http://slides.yoss.si/gocon/martini.html)）
+
+- Go言語のライブラリ（OSS）を開発
 
   - [GCSS](https://github.com/yosssi/gcss) - CSSプリプロセッサ
 
-- [Go Conference 2014 spring](http://connpass.com/event/6370/)にて、Go言語製Webアプリケーションフレームワーク[Martini](http://martini.codegangsta.io/)について発表（[資料](http://slides.yoss.si/gocon/martini.html)）
+  - [Ace](https://github.com/yosssi/ace) - HTMLテンプレートエンジン
+
+- [全世界のGo言語ユーザのうち、上位4%のアクティブユーザに](https://osrc.dfm.io/yosssi/)
+
+- [topcoder](http://www.topcoder.com/)のGo言語のプログラミングレースにて[1位になり、賞金$150を獲得](http://www.topcoder.com/challenge-details/30046010/#winner)
+
+- topcoderのGo言語のプログラミング課題のレビュア（採点者）として参加
 ]
 ---
+class: center, middle, inverse
+## 目的：Go言語の概要を知って頂く
+---
 .left-column[
-## 概要
+## 範囲
+]
+.right-column[
+- 話すこと
+
+  - Go言語の歴史・背景・目的
+
+  - Go言語の構文・コマンド（一部）
+
+  - Go言語製のプロダクト
+
+  - Go言語に関する話題
+
+- 話さないこと
+
+  - Go言語の言語仕様・構文・コマンドの詳細
+
+  - Go言語での実践的な開発手法
+]
+---
+class: center, middle, inverse
+## Go言語の基本情報
+---
+.left-column[
+## 基本情報
 ]
 .right-column[
 - オープンソースのプログラミング言語
@@ -50,6 +85,11 @@ class: center, middle, inverse
 
 - 2014年10月にバージョン1.3.3がリリース
 ]
+---
+class: center, middle, inverse
+## Go言語が誕生した背景・Go言語の目的
+
+#### 出典：Rob Pike (2009) [The Go Programming Language](http://talks.golang.org/2009/go_talk-20091030.pdf) （[動画](https://www.youtube.com/watch?v=rKnDgT73v8s)）
 ---
 class: center, middle, inverse
 ## Go fast!
@@ -74,7 +114,7 @@ class: center, middle, inverse
 
   - マルチコアCPUの普及
 
-- 主要なプログラミング言語は、上記を前提として設計されているわけではない
+- 従来の主要なプログラミング言語は、上記を前提として設計されているわけではない
 ]
 ---
 .left-column[
@@ -113,6 +153,118 @@ class: center, middle, inverse
   - 階層構造の決定と継承の再配置に時間がかかり過ぎる
 
 - 生産性と安全性のどちらかを得ることはできるが、両方を得ることはできない
+]
+---
+class: center, middle, inverse
+## Go言語の誕生
+---
+.left-column[
+## 目的
+]
+.right-column[
+- 生産性と安全性の両立
+
+  - 動的型付け言語並みの書きやすさ
+
+  - 静的型付け言語の安全性
+
+- 並行処理のサポート
+
+- 効率的で遅延のないGC
+
+- 高速コンパイル
+]
+---
+class: center, middle, inverse
+## Go言語の構文（一部）
+
+#### 参考：[A Tour of Go](http://tour.golang.org/)
+---
+.left-column[
+## Hello world
+]
+.right-column[
+```go
+// このプログラムが属するパッケージの名前
+package main
+
+// このプログラムが使用する外部パッケージの名前
+import "fmt"
+
+// 関数定義（mainパッケージのmainメソッドから処理が開始）
+func main() {
+  fmt.Println("Hello world")
+}
+```
+]
+---
+.left-column[
+## 関数
+]
+.right-column[
+```go
+package main
+
+import "fmt"
+
+// 複数の値を返却可能
+func swap(x int, y int) (int, int) {
+  return y, x
+}
+
+func main() {
+  fmt.Println(swap(1, 2))
+}
+```
+]
+---
+.left-column[
+## 変数
+]
+.right-column[
+```go
+package main
+
+import "fmt"
+
+// グローバル変数（var、変数名、型、値）
+var i int = 1
+
+// 型は省略可能
+var s = "a"
+
+func main() {
+  // ローカル変数（var、変数名、型、値）
+  var j int = 2
+
+  // ローカル変数ではvarも省略可能
+  t := "b"
+
+  fmt.Println(i, s, j, t)
+}
+```
+]
+---
+.left-column[
+## Loop
+]
+.right-column[
+```go
+package main
+
+import "fmt"
+
+func main() {
+  var sum int
+
+  // ループはforのみ。括弧は不要。波括弧は必須。
+  for i := 0; i < 10; i++ {
+    sum += i
+  }
+
+  fmt.Println(sum)
+}
+```
 ]
     </textarea>
     <script src="/js/remark-latest.min.js" type="text/javascript">
