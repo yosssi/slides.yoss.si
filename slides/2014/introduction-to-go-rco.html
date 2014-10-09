@@ -59,6 +59,8 @@ class: center, middle, inverse
 
   - Go言語の言語仕様・構文・コマンドの詳細
 
+  - Go言語で提供されている標準パッケージ
+
   - Go言語での実践的な開発手法
 ]
 ---
@@ -66,7 +68,7 @@ class: center, middle, inverse
 ## Go言語の基本情報
 ---
 .left-column[
-## 基本情報
+## Basics
 ]
 .right-column[
 - オープンソースのプログラミング言語
@@ -156,7 +158,7 @@ class: center, middle, inverse
 ## Make programming fun again!
 ---
 .left-column[
-## 目的
+## Goals
 ]
 .right-column[
 - 生産性と安全性の両立
@@ -193,6 +195,8 @@ func main() {
   fmt.Println("Hello world")
 }
 ```
+
+[Go Playgroundで実行](http://play.golang.org/p/_ZK_0Uh56N)
 ]
 ---
 .left-column[
@@ -213,6 +217,7 @@ func main() {
   fmt.Println(swap(1, 2))
 }
 ```
+[Go Playgroundで実行](http://play.golang.org/p/IxKUCJa-RK)
 ]
 ---
 .left-column[
@@ -240,6 +245,7 @@ func main() {
   fmt.Println(i, s, j, t)
 }
 ```
+[Go Playgroundで実行](http://play.golang.org/p/PFmiN_xChM)
 ]
 ---
 .left-column[
@@ -262,6 +268,7 @@ func main() {
   fmt.Println(sum)
 }
 ```
+[Go Playgroundで実行](http://play.golang.org/p/Sl8_i2UM_k)
 ]
 ---
 .left-column[
@@ -289,6 +296,7 @@ func main() {
   }
 }
 ```
+[Go Playgroundで実行](http://play.golang.org/p/8VhDXwzMDV)
 ]
 ---
 .left-column[
@@ -321,6 +329,7 @@ func main() {
   d.Bark()
 }
 ```
+[Go Playgroundで実行](http://play.golang.org/p/TchqX79dE4)
 ]
 ---
 .left-column[
@@ -353,6 +362,7 @@ func main() {
   b.Bark()
 }
 ```
+[Go Playgroundで実行](http://play.golang.org/p/FN_OvCtWWu)
 ]
 ---
 .left-column[
@@ -384,6 +394,7 @@ func main() {
   fmt.Println(i)
 }
 ```
+[Go Playgroundで実行](http://play.golang.org/p/GNkvtI6sF4)
 ]
 ---
 .left-column[
@@ -411,6 +422,7 @@ func main() {
   say("hello")
 }
 ```
+[Go Playgroundで実行](http://play.golang.org/p/e56g-XOIhp)
 ]
 ---
 .left-column[
@@ -440,10 +452,161 @@ func main() {
   }
 
   close(c) // 送信用channelをクローズ
-
   <-done // 別のgoroutineからのデータを受信するまで待機
 }
 ```
+[Go Playgroundで実行](http://play.golang.org/p/a9thqMoXKl)
+]
+---
+class: center, middle, inverse
+## Go言語のコマンド
+
+#### 参考：[Command Documentation - The Go Programming Language](http://golang.org/doc/cmd)
+---
+.left-column[
+## go fmt
+]
+.right-column[
+- Go言語のソースコードの整形ツール
+
+- インデント、スペースなどを自動で整形
+
+```sh
+go fmt [packages]
+```
+]
+---
+.left-column[
+## go test
+]
+.right-column[
+- Go言語の単体テスト実行ツール
+
+```sh
+go test [packages]
+```
+
+- -coverオプションでカバレッジの計測が可能
+
+```sh
+go test -cover [packages]
+```
+
+- カバレッジの状況をHTMLファイルで出力することも可能
+
+```sh
+go test -coverprofile=coverage.out [package]
+go tool cover -html=coverage.out
+```
+
+- -raceオプションでRace Conditionの検知が可能
+
+```sh
+go test -race
+```
+]
+---
+.left-column[
+## go build
+]
+.right-column[
+- Go言語のソースコードのビルドツール
+
+```sh
+go build [packages]
+```
+
+- 実行可能なバイナリファイルを生成
+
+- 各環境向けのバイナリファイルを生成できる
+
+```sh
+GOOS=darwin GOARCH=386 go build [packages]
+GOOS=darwin GOARCH=amd64 go build [packages]
+GOOS=freebsd GOARCH=386 go build [packages]
+GOOS=freebsd GOARCH=amd64 go build [packages]
+GOOS=linux GOARCH=386 go build [packages]
+GOOS=linux GOARCH=amd64 go build [packages]
+GOOS=linux GOARCH=arm go build [packages]
+GOOS=windows GOARCH=386 go build [packages]
+GOOS=windows GOARCH=amd64 go build [packages]
+```
+]
+---
+class: center, middle, inverse
+## Go言語製のプロダクト
+---
+.left-column[
+## Products
+]
+.right-column[
+- [Vitess](https://github.com/youtube/vitess) - Google社がYouTubeのMySQLサーバをスケールさせるために開発したミドルウェア
+- [Docker](https://docker.com/) - コンテナ型仮想環境構築ツール
+- [hk](https://github.com/heroku/hk) - Herokuコマンドラインツール
+- [Packer](http://www.packer.io/) - 複数プラットフォーム用のマシンイメージを生成するツール
+- [Serf](http://www.serfdom.io/) - サービスディスカバリーやオーケストレーション，障害検出のためのツール
+- [Consul](http://www.consul.io/) - サービス監視・コンフィグレーションツール
+- [Terraform](http://www.terraform.io/) - オーケストレーションツール
+- [Mackerel](https://mackerel.io/) - サーバリソース監視サービス
+- [InfluxDB](http://influxdb.com/) - 時系列データ用データベース
+- [Syncthing](https://github.com/syncthing/syncthing) - マシン間でのファイル共有・同期ツール
+- [etcd](https://github.com/coreos/etcd) - 分散key-valueストア
+- [Gogs](http://gogs.io/) - Gitリポジトリホスティングサービス
+- [Hugo](http://gohugo.io/) - 静的サイトジェネレータ
+- [peco](https://github.com/peco/peco) - シェル用フィルタリングツール
+- [Drone](https://github.com/drone/drone) - Dockerを利用したCIツール
+- [Heka](https://github.com/mozilla-services/heka) - サーバーログ収集・分析ツール
+]
+---
+class: center, middle, inverse
+## Go言語に関する話題
+---
+.left-column[
+## Topics
+#### 1/2
+]
+.right-column[
+- [Go in Production at Mackerel.io](https://speakerdeck.com/stanaka/go-in-production-at-mackerel-dot-io)
+
+  - はてな社がサーバリソース監視サービス[Mackerel](https://mackerel.io/)をGo言語で開発したときの話
+
+- [300万人をGoで捌いた話](https://speakerdeck.com/ymatsuwitter/300mo-ren-wogodeba-itahua)
+
+  - Gunosy社でのGo言語の使用事例
+
+- [Go駆動開発で超速Pushエンジンを作った話](https://speakerdeck.com/lufia/goqu-dong-kai-fa-dechao-su-pushenzinwozuo-tutahua)
+
+  - フェンリル社でのGo言語の使用事例
+
+- [2014年夏、カヤックは、Go言語を積極的に推進していきます。｜ニュース｜面白法人カヤック](http://www.kayac.com/news/2014/07/golang)
+
+- [ISUCON4 本戦出場者決定のお知らせと本選出場者の利用言語比率 : ISUCON公式Blog](http://isucon.net/archives/40576269.html)
+
+- [Practical Go](http://techtalk.chobie.net/practicalgo.slide)
+
+  - GREE社でのGo言語、InfluxDBの使用事例
+]
+---
+.left-column[
+## Topics
+#### 2/2
+]
+.right-column[
+- [Farewell Node.js (翻訳) - from scratch](http://yosuke-furukawa.hatenablog.com/entry/2014/07/06/094617)
+
+- [A list of organizations that use Go. - Go Language Community Wiki - Google Project Hosting](https://code.google.com/p/go-wiki/wiki/GoUsers)
+]
+---
+class: center, middle, inverse
+## Let's get started.
+---
+.left-column[
+## Get Started
+]
+.right-column[
+- [A Tour of Go](http://tour.golang.org/)
+
+- [WEB+DB PRESS Vol.82 - はじめてのGo](http://gihyo.jp/magazine/wdpress/archive/2014/vol82)
 ]
     </textarea>
     <script src="/js/remark-latest.min.js" type="text/javascript">
